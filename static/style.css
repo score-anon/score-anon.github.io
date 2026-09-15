@@ -2937,21 +2937,53 @@
 
 
         /* ── appendix call-to-action + contents ───────────────────────── */
+        @keyframes af-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(200,120,40,0.55), 0 6px 20px rgba(0,0,0,0.12); }
+            50%      { box-shadow: 0 0 0 12px rgba(200,120,40,0.00), 0 10px 28px rgba(0,0,0,0.18); }
+        }
+        @keyframes af-shine {
+            0%   { transform: translateX(-140%) skewX(-18deg); }
+            55%  { transform: translateX(260%)  skewX(-18deg); }
+            100% { transform: translateX(260%)  skewX(-18deg); }
+        }
+        @keyframes af-nudge {
+            0%, 100% { transform: translateX(0); }
+            50%      { transform: translateX(5px); }
+        }
+
+        .appendix-flash, .appendix-flash-big {
+            position: relative; overflow: hidden; isolation: isolate;
+            background: linear-gradient(100deg, #c8782a 0%, #e0953f 45%, #c8782a 100%) !important;
+            border-color: #c8782a !important; color: #fff !important;
+            animation: af-pulse 2.4s ease-in-out infinite;
+        }
+        .appendix-flash:hover, .appendix-flash-big:hover {
+            background: linear-gradient(100deg, #b26a22 0%, #e0953f 45%, #b26a22 100%) !important;
+            transform: translateY(-2px) scale(1.02);
+            animation-play-state: paused;
+        }
+        .af-shine {
+            position: absolute; top: 0; left: 0; width: 45%; height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
+            animation: af-shine 2.8s ease-in-out infinite; pointer-events: none; z-index: 1;
+        }
+        .af-label { position: relative; z-index: 2; font-weight: 700; letter-spacing: .015em; }
+
         .appendix-cta {
             display: flex; align-items: center; gap: 18px;
-            margin: 26px 0 8px; padding: 20px 24px;
-            border: 1.5px solid var(--em); border-radius: 12px;
-            background: var(--em-glow, rgba(0,0,0,0.02));
+            margin: 26px 0 8px; padding: 22px 26px;
+            border: 1.5px solid var(--em); border-radius: 14px;
             text-decoration: none; color: var(--ink);
-            transition: background .18s ease, transform .18s ease;
+            transition: transform .18s ease, box-shadow .18s ease;
         }
-        .appendix-cta:hover { background: var(--em); color: #fff; transform: translateY(-2px); }
-        .appendix-cta:hover .appendix-cta-text em { color: rgba(255,255,255,0.82); }
-        .appendix-cta-icon { font-size: 30px; line-height: 1; flex: none; }
-        .appendix-cta-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
-        .appendix-cta-text strong { font-size: 1.06rem; letter-spacing: .01em; }
-        .appendix-cta-text em { font-style: normal; font-size: .88rem; color: var(--ink-muted); }
-        .appendix-cta-arrow { font-size: 22px; flex: none; opacity: .75; }
+        .appendix-cta > *:not(.af-shine) { position: relative; z-index: 2; }
+        .appendix-cta-icon { font-size: 34px; line-height: 1; flex: none; }
+        .appendix-cta-text { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+        .appendix-cta-text strong { font-size: 1.22rem; letter-spacing: .01em; }
+        .appendix-cta-text em { font-style: normal; font-size: .92rem; opacity: .85; }
+        .appendix-cta-arrow {
+            font-size: 26px; flex: none; animation: af-nudge 1.5s ease-in-out infinite;
+        }
 
         .appendix-toc {
             display: grid; grid-template-columns: 1fr 1fr; gap: 10px 40px;
@@ -2968,4 +3000,7 @@
         @media (max-width: 720px) {
             .appendix-toc { grid-template-columns: 1fr; }
             .appendix-cta { flex-wrap: wrap; gap: 12px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .appendix-flash, .appendix-flash-big, .af-shine, .appendix-cta-arrow { animation: none; }
         }
