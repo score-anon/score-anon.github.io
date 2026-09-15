@@ -28,13 +28,14 @@
         <div class="spine-track" id="spine-track">
             <div class="spine-bar"></div>
             <div class="spine-cursor" id="spine-cursor"></div>
-            <a class="spine-stop" href="#sec-problem"      style="--p:0%"    ><span class="dot"></span><span class="lbl">Problem</span></a>
-            <a class="spine-stop" href="#sec-method"       style="--p:17%"   ><span class="dot"></span><span class="lbl">Method</span></a>
-            <a class="spine-stop" href="#sec-failures"     style="--p:33%"   ><span class="dot"></span><span class="lbl">Free RL</span></a>
-            <a class="spine-stop" href="#sec-tradeoff"     style="--p:50%"   ><span class="dot"></span><span class="lbl">Tradeoff</span></a>
-            <a class="spine-stop" href="#sec-support"      style="--p:67%"   ><span class="dot"></span><span class="lbl">Support</span></a>
-            <a class="spine-stop" href="#sec-limitations"  style="--p:83%"   ><span class="dot"></span><span class="lbl">Reach</span></a>
-            <a class="spine-stop" href="#sec-takeaway"     style="--p:100%"  ><span class="dot"></span><span class="lbl">Takeaway</span></a>
+            <a class="spine-stop" href="#sec-problem" style="--p:0%"><span class="dot"></span><span class="lbl">Problem</span></a>
+            <a class="spine-stop" href="#sec-method" style="--p:14%"><span class="dot"></span><span class="lbl">Method</span></a>
+            <a class="spine-stop" href="#sec-failures" style="--p:29%"><span class="dot"></span><span class="lbl">Free RL</span></a>
+            <a class="spine-stop" href="#sec-tradeoff" style="--p:43%"><span class="dot"></span><span class="lbl">Tradeoff</span></a>
+            <a class="spine-stop" href="#sec-support" style="--p:57%"><span class="dot"></span><span class="lbl">Support</span></a>
+            <a class="spine-stop" href="#sec-limitations" style="--p:71%"><span class="dot"></span><span class="lbl">Reach</span></a>
+            <a class="spine-stop" href="#sec-takeaway" style="--p:86%"><span class="dot"></span><span class="lbl">Takeaway</span></a>
+            <a class="spine-stop" href="#sec-appendix" style="--p:100%"><span class="dot"></span><span class="lbl">Appendix</span></a>
         </div>
     </div>
 </nav>
@@ -58,6 +59,7 @@
 
     <div class="hero-quick-links">
         <a class="qlink primary" href="#" onclick="openVideoLb(); return false;">&#9654; Full video</a>
+        <a class="qlink" href="static/score_paper_with_appendix.pdf">&#128196; Paper + Appendix (PDF)</a>
     </div>
 </header>
 
@@ -548,6 +550,72 @@
     </p>
 </section>
 
+
+<!-- ════════════════ APPENDIX ════════════════ -->
+<section class="page-section fade-in" id="sec-appendix">
+    <header class="sec-head">
+        <span class="sigma-rule"></span>
+        <h2 class="sec-title">Appendix</h2>
+        <p class="sec-lead">Everything that did not fit in the eight page limit.</p>
+    </header>
+
+    <p class="body-text" style="margin-top:22px;">
+        The submitted paper is capped at eight pages including references, so the appendix lives here instead. It is bound into the same PDF, starting on page 9.
+    </p>
+
+    <a class="appendix-cta" href="static/score_paper_with_appendix.pdf">
+        <span class="appendix-cta-icon">&#128196;</span>
+        <span class="appendix-cta-text">
+            <strong>Full paper with appendix</strong>
+            <em>PDF, 22 pages. Appendix begins on page 9.</em>
+        </span>
+        <span class="appendix-cta-arrow">&#8594;</span>
+    </a>
+
+    <div class="appendix-toc">
+        <div class="appendix-toc-col">
+            <h4>A &nbsp;Additional Results</h4>
+            <ul>
+                <li>Per-task success and statistical significance</li>
+                <li>Simulation success and sim-to-real transfer</li>
+                <li>Does SCORE stay within the support?</li>
+                <li>Robustness to dynamics mismatch</li>
+                <li>Retry data without the residual</li>
+                <li>Engineering effort</li>
+            </ul>
+            <h4>B &nbsp;Experiment Details</h4>
+            <ul>
+                <li>Hardware and control setup</li>
+                <li>Dexterous manipulation tasks</li>
+                <li>Data collection</li>
+                <li>Rewards</li>
+                <li>Evaluation protocol</li>
+            </ul>
+        </div>
+        <div class="appendix-toc-col">
+            <h4>C &nbsp;Baseline Implementations</h4>
+            <ul>
+                <li>FPO</li>
+                <li>RialTo</li>
+                <li>Residual RL</li>
+            </ul>
+            <h4>D &nbsp;Real-to-Sim-to-Real Pipeline</h4>
+            <ul>
+                <li>Observation and action spaces</li>
+                <li>Flow policy architecture and training</li>
+                <li>Environment generation</li>
+                <li>Domain randomization</li>
+                <li>Asymmetric residual flow steering</li>
+                <li>Deployment in the real world</li>
+            </ul>
+            <h4>E &nbsp;Qualitative Analysis</h4>
+            <ul>
+                <li>Single-task improvement and failure modes</li>
+                <li>Multi-task steering and behavior reuse</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 </main><!-- /.paper -->
 
