@@ -513,24 +513,6 @@
         </div>
     </div>
 
-    <!-- ── Distractor adaptation ── -->
-    <h3 class="sub-head" style="margin-top:42px;">Adding distractors</h3>
-    <p class="body-text">
-        The bottle policy was trained with <strong>no distractor objects</strong>. We add <strong>two distractor cubes</strong> and apply <strong>SCORE</strong> to grasp around them, recovering a working grasp on hardware, but only when the bottle sits on one side of the workspace.
-    </p>
-    <div class="rollout-grid" style="margin-top:16px;">
-        <div class="rollout-col">
-            <div class="rollout-col-title">Base <em>(with distractor)</em></div>
-            <video src="static/videos/future/distractor/hw_base/ep_000.mp4?v=20260604i" autoplay loop muted playsinline controls controlslist="nodownload noplaybackrate" style="width:100%;border-radius:10px;display:block;background:#000;"></video>
-            <div class="rollout-note base-note"><span class="note-tag">✗ Base policy</span>With a distractor, the base bottle policy collapses (<strong>0%</strong> success).</div>
-        </div>
-        <div class="rollout-col emerald-col">
-            <div class="rollout-col-title">SCORE <em>(with distractor)</em></div>
-            <video src="static/videos/future/distractor/hw_score/ep_000.mp4?v=20260604i" autoplay loop muted playsinline controls controlslist="nodownload noplaybackrate" style="width:100%;border-radius:10px;display:block;background:#000;"></video>
-            <div class="rollout-note score-note"><span class="note-tag">~ SCORE behavior</span>Retrained in sim with the distractors, SCORE recovers a grasp over part of the workspace (56%). Trained without distractors, the base policy never learned the visual features that separate the cubes from the bottle, which makes it much harder to steer in the new setting.</div>
-        </div>
-    </div>
-
     <div class="key-insight" style="margin-top:30px;">
         <span class="ki-label">The limit</span>
         <p>What limits SCORE is the base policy itself. The broader its coverage, the further it can go.</p>

@@ -1698,19 +1698,6 @@
         /* ROLLOUTS */
         .rollout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
         @media (max-width: 600px) { .rollout-grid { grid-template-columns: 1fr; } }
-        /* distractor sim-vs-hardware comparison: labeled stage rows */
-        .distractor-compare { margin: 18px 0 4px; }
-        .dc-stage { display: flex; align-items: center; gap: 14px; margin: 0 0 12px; }
-        .dc-stage span {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--em);
-            white-space: nowrap;
-        }
-        .dc-stage::after { content: ""; flex: 1; height: 1px; background: var(--rule-soft); }
         .rollout-col {
             border: 1px solid var(--rule-soft);
             border-radius: 14px;

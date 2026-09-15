@@ -234,14 +234,6 @@
         container.innerHTML=''; container.appendChild(svg);
     }
 
-    function buildDistractor(container){
-        buildSteeringChart(container,
-            [0.0, 0.111, 0.556],
-            [['Bottle Grasp', 'Base'], ['Bottle Grasp', 'SCORE'], ['Distractor', 'Steered SCORE']],
-            [C.base, C.score, C.ochre],
-            'base: bottle grasp only - distractors are OOD'
-        );
-    }
     function buildCarrot(container){
         buildSteeringChart(container,
             [0.0, 0.222, 0.667],
@@ -352,7 +344,6 @@
             ['chart-coverage',  buildCoverage],
             ['chart-workspace', buildWorkspace],
             ['chart-retry',     buildRetry],
-            ['chart-distractor',buildDistractor],
             ['chart-carrot',    buildCarrot],
             ['chart-rl',        buildRL]
         ];
